@@ -107,7 +107,33 @@
       padding-top: 52px;
     }
 
-    .hero-inner { padding: 5vw 0 2vw; }
+    .hero-inner {
+      padding: 5vw 0 2vw;
+      display: flex;
+      align-items: flex-start;
+      gap: 2.5rem;
+    }
+
+    .hero-text { flex: 1; }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--green-dim);
+      box-shadow: 0 0 28px var(--green-glow);
+      opacity: 0;
+      animation: fadeUp 0.5s 0.1s forwards;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     h1 {
       font-size: clamp(1.9rem, 4vw, 2.8rem);
@@ -357,6 +383,8 @@
     @media (max-width: 600px) {
       .about-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .hero-inner { flex-direction: column-reverse; gap: 1.5rem; }
+      .hero-photo { width: 120px; height: 120px; }
     }
   </style>
 </head>
@@ -369,7 +397,7 @@
   <ul class="nav-links">
     <li><a href="#projetos">Projetos</a></li>
     <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#contato">Contato</a></li>
+    <li><a href="#sobre">Contato</a></li>
   </ul>
 </nav>
 
@@ -377,6 +405,10 @@
 <section id="hero">
   <div class="wrapper">
     <div class="hero-inner">
+      <div class="hero-photo">
+        <img src="PROFILE.jpg" alt="Foto de Mateus Ferreira" />
+      </div>
+      <div class="hero-text">
       <h1>Mateus Ferreira</h1>
       <p class="hero-role">Analista de Dados | TI &amp; Ciências Sociais Aplicadas</p>
       <p class="hero-sub">
@@ -404,7 +436,8 @@
       </div>
       <div class="hero-ctas">
         <a href="#projetos" class="btn btn-primary">Ver projetos</a>
-        <a href="mailto:silva.mateus@gmail.com" class="btn btn-secondary">Contato</a>
+        <a href="#sobre" class="btn btn-secondary">Contato</a>
+      </div>
       </div>
     </div>
   </div>
@@ -420,7 +453,7 @@
     <div class="projects-grid reveal">
 
       <!-- TCC -->
-      <div class="project-card static">
+      <a class="project-card" href="TFC_Conpex_2026.pdf" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-title">Nação e Conflito — Participação Política e Etnicidade</div>
           <div class="card-badges">
@@ -445,10 +478,11 @@
           <span class="tag">Ciências Sociais</span>
           <span class="tag">UFG</span>
         </div>
-      </div>
+        <div class="card-arrow">↗ acessar apresentação PDF</div>
+      </a>
 
       <!-- SIGMONITOR -->
-      <div class="project-card static">
+      <a class="project-card" href="https://signates.com.br" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-title">Sigmonitor</div>
           <div class="card-badges">
@@ -470,7 +504,8 @@
           <span class="tag">Cloudflare R2</span>
           <span class="tag">Render</span>
         </div>
-      </div>
+        <div class="card-arrow">↗ acessar plataforma</div>
+      </a>
 
       <!-- MAPA -->
       <a class="project-card" href="https://cyber-salazar.github.io/Mapa_Eleicoes_Fabricio_Goias/" target="_blank" rel="noopener">
@@ -552,6 +587,10 @@
           <li>
             <span class="label">GitHub</span>
             <a href="https://github.com/cyber-salazar" target="_blank" rel="noopener">cyber-salazar</a>
+          </li>
+          <li>
+            <span class="label">Lattes</span>
+            <a href="https://lattes.cnpq.br/9384522822427817" target="_blank" rel="noopener">lattes.cnpq.br</a>
           </li>
           <li>
             <span class="label">Cidade</span>
