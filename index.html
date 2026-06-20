@@ -210,12 +210,12 @@ h2 span{color:var(--green)}
 .contact-list a:hover{color:var(--green)}
 footer{border-top:1px solid var(--border);padding:1.4rem 0;text-align:center;color:var(--muted);font-size:.68rem;font-family:'JetBrains Mono',monospace;position:relative;z-index:1}
 
-/* HABILIDADES — cerrado pastel */
-#habilidades{
+/* SOBRE — cerrado pastel */
+#sobre{
   position:relative;
   overflow:hidden;
 }
-#habilidades::before{
+#sobre::before{
   content:'';position:absolute;inset:0;z-index:0;
   background:
     radial-gradient(ellipse 120% 80% at 20% 90%, rgba(194,163,112,.18) 0%, transparent 60%),
@@ -224,6 +224,7 @@ footer{border-top:1px solid var(--border);padding:1.4rem 0;text-align:center;col
     radial-gradient(ellipse 60% 90% at 90% 20%, rgba(142,160,110,.12) 0%, transparent 50%),
     linear-gradient(175deg, rgba(194,163,112,.06) 0%, rgba(142,160,110,.08) 50%, rgba(168,132,88,.06) 100%);
 }
+#sobre .wrapper{position:relative;z-index:1}
 .skills-panel{
   position:relative;z-index:1;
   display:grid;
@@ -285,7 +286,7 @@ footer{border-top:1px solid var(--border);padding:1.4rem 0;text-align:center;col
 
         <div class="hero-timeline">
           <div class="timeline-block">
-            <span class="timeline-epoch">Anos 2000 · Início</span>
+            <span class="timeline-epoch">Início</span>
             <p class="timeline-text">Comecei a programar editando códigos em <strong>dBase e Clipper</strong> trabalhando como auxiliar de escritório em uma clínica. Naquela época a gente tinha acesso direto ao código-fonte com o sistema rodando.</p>
           </div>
           <div class="timeline-block">
@@ -400,14 +401,7 @@ footer{border-top:1px solid var(--border);padding:1.4rem 0;text-align:center;col
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="habilidades">
-  <div class="wrapper reveal">
-    <h2>Habilidades <span>Técnicas</span></h2>
-    <div class="divider"></div>
-    <div class="skills-panel">
+    <div class="skills-panel" style="margin-top:2.5rem">
       <div class="skills-col">
         <h3 class="skills-heading">Dados &amp; Analytics</h3>
         <span class="skill-tag">Python</span>
