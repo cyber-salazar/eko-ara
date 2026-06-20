@@ -176,6 +176,45 @@ h2 span{color:var(--green)}
 .contact-list a:hover{color:var(--green)}
 footer{border-top:1px solid var(--border);padding:1.4rem 0;text-align:center;color:var(--muted);font-size:.68rem;font-family:'JetBrains Mono',monospace;position:relative;z-index:1}
 
+/* HABILIDADES — cerrado pastel */
+#habilidades{
+  position:relative;
+  overflow:hidden;
+}
+#habilidades::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 120% 80% at 20% 90%, rgba(194,163,112,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 70% at 80% 70%, rgba(168,132,88,.14) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(186,174,140,.1) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 90% at 90% 20%, rgba(142,160,110,.12) 0%, transparent 50%),
+    linear-gradient(175deg, rgba(194,163,112,.06) 0%, rgba(142,160,110,.08) 50%, rgba(168,132,88,.06) 100%);
+}
+.skills-panel{
+  position:relative;z-index:1;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(1rem,2vw,2rem);
+}
+.skills-heading{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--green);margin-bottom:.8rem;
+}
+.skills-col{display:flex;flex-direction:column;gap:.4rem}
+.skill-tag{
+  font-size:.78rem;font-family:'Inter',sans-serif;
+  padding:6px 12px;
+  border-radius:4px;
+  background:rgba(16,21,16,.7);
+  border:1px solid var(--border);
+  color:var(--muted);
+  transition:border-color .2s,color .2s;
+  width:fit-content;
+}
+.skill-tag:hover{border-color:var(--green-dim);color:var(--green)}
+@media(max-width:640px){.skills-panel{grid-template-columns:1fr}}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -210,13 +249,6 @@ footer{border-top:1px solid var(--border);padding:1.4rem 0;text-align:center;col
         <h1>Mateus Ferreira</h1>
         <p class="hero-role">Análise de Dados &amp; Sociologia Aplicada<span class="cursor">_</span></p>
         <p class="hero-sub">Soluções para gestão pública, campanhas eleitorais, monitoramento de marca e mandatos parlamentares.</p>
-        <div class="chips">
-          <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">GeoPandas</span>
-          <span class="chip">Streamlit</span><span class="chip">BERT / NLP</span><span class="chip">Political Data Analytics</span>
-          <span class="chip">Visualização de Dados</span><span class="chip">Análise Eleitoral</span><span class="chip">Séries Temporais</span>
-          <span class="chip">Social Listening</span><span class="chip">Mapas Coropléticos</span><span class="chip">Power BI</span>
-          <span class="chip">Supabase</span><span class="chip">Cloudflare</span><span class="chip">Erlang C</span><span class="chip">Scrum</span>
-        </div>
         <div class="hero-ctas">
           <a href="#projetos" class="btn btn-primary">Ver projetos</a>
           <a href="#sobre" class="btn btn-secondary">Contato</a>
@@ -303,7 +335,11 @@ footer{border-top:1px solid var(--border);padding:1.4rem 0;text-align:center;col
     <div class="divider"></div>
     <div class="about-grid">
       <div class="about-text">
-        <p>Mais de <strong>20 anos de experiência em Tecnologia da Informação</strong>, com passagem por desenvolvimento de sistemas, gestão de projetos e planejamento operacional em empresas como <strong>Itaú Unibanco</strong> e <strong>BRQ</strong>.</p>
+        <p>Comecei a programar editando códigos em <strong>dBase e Clipper</strong> trabalhando como auxiliar de escritório em uma clínica. Naquela época a gente tinha acesso direto ao código-fonte com o sistema rodando.</p>
+        <p>Nos anos 2000 os bancos entraram numa corrida por market share e passaram a investir pesado na bancarização da nova classe C. Comecei a trabalhar com <strong>COBOL e DB2</strong>, usando técnicas modernas em cima de uma infraestrutura velha.</p>
+        <p>Quando chegou o auge da orientação a objetos achei que a programação tinha perdido a graça. <strong>Até agora.</strong></p>
+        <p>A possibilidade de gerar conhecimento com programação está absurda. E não tem como ficar de fora desse momento.</p>
+        <p style="margin-top:1rem;">Mais de <strong>20 anos de experiência em Tecnologia da Informação</strong>, com passagem por desenvolvimento de sistemas, gestão de projetos e planejamento operacional em empresas como <strong>Itaú Unibanco</strong> e <strong>BRQ</strong>.</p>
         <p>Formação em <strong>Ciências Sociais e Políticas Públicas (UFG)</strong> e <strong>MBA em Data Science e Analytics (USP/Esalq)</strong>. Mestrando em Sociologia na UFG, aplicando métodos quantitativos à pesquisa política e social.</p>
         <p>Atualmente <strong>Assessor Parlamentar</strong> na Câmara Municipal de Goiânia, responsável pela área de dados e análise estratégica de um mandato parlamentar em Goiás.</p>
       </div>
@@ -315,6 +351,41 @@ footer{border-top:1px solid var(--border);padding:1.4rem 0;text-align:center;col
           <li><span class="label">Lattes</span><a href="https://lattes.cnpq.br/9384522822427817" target="_blank" rel="noopener">lattes.cnpq.br</a></li>
           <li><span class="label">Cidade</span><span style="color:var(--muted)">Goiânia, GO</span></li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="habilidades">
+  <div class="wrapper reveal">
+    <h2>Habilidades <span>Técnicas</span></h2>
+    <div class="divider"></div>
+    <div class="skills-panel">
+      <div class="skills-col">
+        <h3 class="skills-heading">Dados &amp; Analytics</h3>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">GeoPandas</span>
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Séries Temporais</span>
+        <span class="skill-tag">Visualização de Dados</span>
+      </div>
+      <div class="skills-col">
+        <h3 class="skills-heading">NLP &amp; Social</h3>
+        <span class="skill-tag">BERT / NLP</span>
+        <span class="skill-tag">Social Listening</span>
+        <span class="skill-tag">Análise Eleitoral</span>
+        <span class="skill-tag">Political Data Analytics</span>
+        <span class="skill-tag">Mapas Coropléticos</span>
+      </div>
+      <div class="skills-col">
+        <h3 class="skills-heading">Infra &amp; Dev</h3>
+        <span class="skill-tag">Streamlit</span>
+        <span class="skill-tag">Supabase</span>
+        <span class="skill-tag">Cloudflare</span>
+        <span class="skill-tag">Erlang C</span>
+        <span class="skill-tag">Scrum</span>
+        <span class="skill-tag">COBOL / DB2</span>
       </div>
     </div>
   </div>
@@ -380,10 +451,9 @@ footer{border-top:1px solid var(--border);padding:1.4rem 0;text-align:center;col
           // distância real até o topo do viewport para cada card
           const r=c.getBoundingClientRect();
           c.style.setProperty('--fall-distance',`-${Math.ceil(r.bottom)+30}px`);
-          const delay=80+i*130;
-          c.style.setProperty('--delay',delay+'ms');
-          setTimeout(()=>c.classList.add('card-in'), delay);
-          setTimeout(()=>{c.classList.add('card-settled');c.classList.remove('card-in');}, delay+1250);
+          c.style.setProperty('--delay','0ms');
+          c.classList.add('card-in');
+          setTimeout(()=>{c.classList.add('card-settled');c.classList.remove('card-in');}, 1250);
         });
       });
     }
